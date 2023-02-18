@@ -16,4 +16,3 @@ spec:
         apiVersion: rabbitmq.com/v1beta1
         kind: RabbitmqCluster
         name: rmq-1
-

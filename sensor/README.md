@@ -21,7 +21,7 @@ EOF
 
 Binding an application workload to a backing service such as a RabbitMQ queue is one of the most important use cases within the context of the VMware Tanzu Application Platform. 
 This use case is made possible by the [Service Binding Specification](https://github.com/servicebinding/spec) for Kubernetes.
-With the service binding that is defined in the [workload.yaml](tap/workload.yaml), the credentials that are required for the connection to the RabbitMQ cluster are magically injected as environment variables into the container.
+With the service binding that is defined in the [workload.yaml](config/workload.yaml), the credentials that are required for the connection to the RabbitMQ cluster are magically injected as environment variables into the container.
 
 To deploy this application on VMware Tanzu Application Platform, execute the following command:
 ```

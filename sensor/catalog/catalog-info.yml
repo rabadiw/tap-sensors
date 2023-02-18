@@ -2,7 +2,6 @@ apiVersion: backstage.io/v1alpha1
 kind: Location
 metadata:
   name: spring-sensors-publisher
-  description: Spring application publisher
   annotations:
     'backstage.io/techdocs-ref': dir:.
 spec:
