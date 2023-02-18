@@ -1,0 +1,13 @@
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: sensors-api
+  description: API for sensor data
+spec:
+  type: openapi
+  lifecycle: experimental
+  owner: team-spring-sensors-catalog
+  definition:
+    $text: ./api-docs.json
+  system: spring-sensors-system
+

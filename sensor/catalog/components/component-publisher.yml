@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: spring-sensors-publisher
+  description: Spring Sensors Publisher
+  tags:
+    - app-accelerator
+    - java
+    - spring
+    - publisher
+  annotations:
+    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=spring-sensors'
+    'backstage.io/techdocs-ref': dir:.
+  links:
+    - url: https://spring.io/
+      title: Spring makes Java simple, modern, productive, reactive, cloud-ready
+spec:
+  type: service
+  lifecycle: experimental
+  owner: team-spring-sensors-catalog
+  system: spring-sensors-system

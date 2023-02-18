@@ -1,0 +1,7 @@
+site_name: 'Demo Sensors Domain'
+
+nav:
+  - Home: index.md
+
+plugins:
+  - techdocs-core

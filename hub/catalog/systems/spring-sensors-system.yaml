@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name:  spring-sensors-system
+  description: Spring Sensors System
+  annotations:
+    'backstage.io/techdocs-ref': dir:.
+spec:
+  owner: team-spring-sensors-catalog
+  domain: demo-sensors-apps

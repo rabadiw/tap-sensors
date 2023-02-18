@@ -1,0 +1,25 @@
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: tim-corp
+  description: The TIM organization
+  links:
+    - url: https://www.tim.it
+      title: Website
+spec:
+  type: organization
+  profile:
+    displayName: TIM 
+    email: tim@tim.it
+    picture: https://www.mondomobileweb.it/wp-content/uploads/2020/08/Gruppo-TIM_logo-corporate.png
+  children: [it-market]
+---
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: tim-group
+  description: The TIM group
+spec:
+  targets:
+    - ./department.yaml
+    - ./team.yaml

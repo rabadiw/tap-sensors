@@ -1,0 +1,24 @@
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: team-spring-sensors-catalog
+  description: Team Spring Sensors Catalog
+spec:
+  type: team
+  profile:
+    displayName: Team Spring Sensors Catalog
+    email: team-spring-sensors-catalog@tim.it
+    picture: https://1.bp.blogspot.com/-trIS3Iz94SE/YIr3iwBC23I/AAAAAAAAtVQ/oieBThHJU3wPJkGOATDSvi6RySwlowM5ACLcBGAsYHQ/w200-h200/spring-logo.png
+  parent: it-market
+  children: []
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: guest
+spec:
+  profile:
+    displayName: First User
+    email: firstuser@team.com
+    picture: https://www.winhelponline.com/blog/wp-content/uploads/2017/12/user.png
+  memberOf: [team-spring-sensors-catalog]
