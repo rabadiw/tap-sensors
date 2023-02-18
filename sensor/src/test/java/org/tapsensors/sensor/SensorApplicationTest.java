@@ -1,13 +1,12 @@
-package org.tanzu.demo;
+package org.tapsensors.sensor;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SensorsSensorApplicationTests {
+class SensorApplicationTest {
 
 	@Test
 	void contextLoads() {
 	}
-
 }

@@ -1,4 +1,4 @@
-package org.tanzu.demo;
+package org.tapsensors.sensor;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,10 +20,17 @@ public class SensorDataSource {
     @Scheduled(fixedDelay = 5, timeUnit = TimeUnit.SECONDS)
     public Supplier<SensorData> sendSensorData() {
         return () -> {
-            var sensorData = SensorData.generate(SENSOR_ID);
+            var sensorData = new SensorData(SENSOR_ID, generateTemperature(), generatePressure());
             log.info("Generated sensorData data: {}", sensorData);
             return sensorData;
         };
     }
 
+    private double generateTemperature() {
+        return Math.random() * 100;
+    }
+
+    private double generatePressure() {
+        return Math.random() * 100;
+    }
 }

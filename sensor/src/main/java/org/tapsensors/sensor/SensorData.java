@@ -1,4 +1,4 @@
-package org.tanzu.demo;
+package org.tapsensors.sensor;
 
 import java.util.UUID;
 
@@ -14,19 +14,6 @@ public class SensorData {
         this.pressure = pressure;
     }
 
-    public static SensorData generate(UUID id) {
-        return new SensorData(id, generateTemperature(), generatePressure());
-    }
-
-    private static double generateTemperature() {
-        return Math.random() * 100;
-    }
-
-    private static double generatePressure() {
-        return Math.random() * 100;
-    }
-
-    // The getters are required for the JSON serialization
     public UUID getId() {
         return id;
     }

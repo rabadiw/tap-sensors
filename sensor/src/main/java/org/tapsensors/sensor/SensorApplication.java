@@ -1,12 +1,12 @@
-package org.tanzu.demo;
+package org.tapsensors.sensor;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SensorsSensorApplication {
+public class SensorApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SensorsSensorApplication.class, args);
+        SpringApplication.run(SensorApplication.class, args);
     }
 }
