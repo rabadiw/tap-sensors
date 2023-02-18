@@ -1,4 +1,4 @@
-package org.tapsensors.hub;
+package org.tapsensors.hub.sensor;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -8,12 +8,12 @@ import org.springframework.stereotype.Component;
 import java.util.function.Consumer;
 
 @Component
-public class SensorsDataSink {
+public class SensorDataSink {
 
-    private final Logger log = LoggerFactory.getLogger(SensorsDataSink.class);
+    private final Logger log = LoggerFactory.getLogger(SensorDataSink.class);
     private final SensorRepository sensorRepository;
 
-    public SensorsDataSink(final SensorRepository sensorRepository) {
+    public SensorDataSink(final SensorRepository sensorRepository) {
         this.sensorRepository = sensorRepository;
     }
 

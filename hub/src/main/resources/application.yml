@@ -1,0 +1,8 @@
+spring:
+  jpa.hibernate.ddl-auto: update
+  datasource:
+    url: jdbc:postgresql://localhost:5432/sensor-db
+    username: user
+    password: password
+  cloud.stream.bindings:
+    receiveSensorData-in-0.destination: sensor-data
