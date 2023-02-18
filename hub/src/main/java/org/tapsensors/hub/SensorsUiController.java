@@ -1,4 +1,4 @@
-package org.tanzu.demo;
+package org.tapsensors.hub;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -24,4 +24,3 @@ public class SensorsUiController {
         return "index";
     }
 }
-

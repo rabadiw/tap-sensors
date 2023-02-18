@@ -1,4 +1,4 @@
-package org.tanzu.demo;
+package org.tapsensors.hub;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

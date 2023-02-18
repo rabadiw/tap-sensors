@@ -1,4 +1,4 @@
-package org.tanzu.demo;
+package org.tapsensors.hub;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

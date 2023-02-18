@@ -1,4 +1,4 @@
-package org.tanzu.demo;
+package org.tapsensors.hub;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,7 +11,6 @@ import java.util.function.Consumer;
 public class SensorsDataSink {
 
     private final Logger log = LoggerFactory.getLogger(SensorsDataSink.class);
-
     private final SensorRepository sensorRepository;
 
     public SensorsDataSink(final SensorRepository sensorRepository) {
@@ -25,5 +24,4 @@ public class SensorsDataSink {
             sensorRepository.save(sensorData);
         };
     }
-
 }
