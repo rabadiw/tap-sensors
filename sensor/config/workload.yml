@@ -16,8 +16,8 @@ spec:
         branch: main
     subPath: sensor
   serviceClaims:
-    - name: rmq
+    - name: sensors-rabbit
       ref:
         apiVersion: rabbitmq.com/v1beta1
         kind: RabbitmqCluster
-        name: rmq-1
+        name: sensors-rabbit-claim

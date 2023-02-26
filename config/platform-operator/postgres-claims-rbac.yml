@@ -1,0 +1,16 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: postgres-claims-role
+  labels:
+    servicebinding.io/controller: "true"
+rules:
+- apiGroups:
+  - sql.tanzu.vmware.com
+  resources:
+  - postgres
+  verbs:
+  - get
+  - list
+  - watch
+  - update

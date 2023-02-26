@@ -16,13 +16,13 @@ spec:
         branch: main
     subPath: hub
   serviceClaims:
-    - name: rmq
+    - name: sensors-rabbit
       ref:
         apiVersion: rabbitmq.com/v1beta1
         kind: RabbitmqCluster
-        name: rmq-1
-    - name: db
+        name: sensors-rabbit-claim
+    - name: sensors-db
       ref:
-        apiVersion: rabbitmq.com/v1beta1
+        apiVersion: sql.tanzu.vmware.com/v1
         kind: Postgres
-        name: postgres-1
+        name: sensors-db-claim
