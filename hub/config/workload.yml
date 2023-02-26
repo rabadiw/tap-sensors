@@ -1,0 +1,28 @@
+apiVersion: carto.run/v1alpha1
+kind: Workload
+metadata:
+  name: tap-sensors-hub
+  namespace: demo
+  labels:
+    app.kubernetes.io/part-of: tap-sensors
+    apps.tanzu.vmware.com/workload-type: web
+#    apps.tanzu.vmware.com/has-tests: true
+#    apps.tanzu.vmware.com/supply-chain: scanning
+spec:
+  source:
+    git:
+      url: https://github.com/d-lorenc/tap-sensors.git
+      ref:
+        branch: main
+    subPath: hub
+  serviceClaims:
+    - name: rmq
+      ref:
+        apiVersion: rabbitmq.com/v1beta1
+        kind: RabbitmqCluster
+        name: rmq-1
+    - name: db
+      ref:
+        apiVersion: rabbitmq.com/v1beta1
+        kind: Postgres
+        name: postgres-1
