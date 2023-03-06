@@ -1,4 +1,5 @@
 spring:
+  application.name: hub
   jpa.hibernate.ddl-auto: update
   datasource:
     url: jdbc:postgresql://localhost:5432/sensor-db
@@ -6,3 +7,8 @@ spring:
     password: password
   cloud.stream.bindings:
     receiveSensorData-in-0.destination: sensor-data
+management:
+  wavefront:
+    uri: https://wavefront.surf
+    application.name: tap-sensors
+wavefront.freemium-account: true
