@@ -4,7 +4,7 @@ metadata:
   name: rabbit
 spec:
   description:
-    short: It's RabbitMQ Cluster!
+    short: Local RabbitMQ cluster
   pool:
     group: rabbitmq.com
     kind: RabbitmqCluster

@@ -4,7 +4,7 @@ metadata:
   name: postgres
 spec:
   description:
-    short: It's a Postgres database!
+    short: Local Postgres database
   pool:
     group: sql.tanzu.vmware.com
     kind: Postgres

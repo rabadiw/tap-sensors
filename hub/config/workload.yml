@@ -2,7 +2,7 @@ apiVersion: carto.run/v1alpha1
 kind: Workload
 metadata:
   name: tap-sensors-hub
-  namespace: default
+  namespace: my-apps
   labels:
     app.kubernetes.io/part-of: tap-sensors
     apps.tanzu.vmware.com/workload-type: web

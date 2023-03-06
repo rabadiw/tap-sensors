@@ -2,7 +2,7 @@ apiVersion: sql.tanzu.vmware.com/v1
 kind: Postgres
 metadata:
   name: sensors-db
-  namespace: default
+  namespace: my-apps
 spec:
   storageClassName: default
   storageSize: 800M
