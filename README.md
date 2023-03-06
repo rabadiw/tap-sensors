@@ -36,14 +36,14 @@ Features:
 ### Platform Operator - Make services available
 To make services available for app operator to create and claim, the platform operator needs to run the following commands:
 ```bash
-kubectl apply -f platform-operator/rabbit-cluster-instance-class.yml
-kubectl apply -f platform-operator/postgres-cluster-instance-class.yml
+kubectl apply -f config/platform-operator/rabbit-cluster-instance-class.yml
+kubectl apply -f config/platform-operator/postgres-cluster-instance-class.yml
 ```
 
 Also, the following RBACs need to be applied:
 ```bash
-kubectl apply -f platform-operator/rabbit-claims-rbac.yml
-kubectl apply -f platform-operator/postgres-claims-rbac.yml
+kubectl apply -f config/platform-operator/rabbit-claims-rbac.yml
+kubectl apply -f config/platform-operator/postgres-claims-rbac.yml
 ```
 
 ### RabbitMQ Cluster
@@ -52,12 +52,12 @@ Kubernetes namespace (e.g. provisioned via the [RabbitMQ Cluster Operator for Ku
 
 An app operator needs to run the following command: 
 ```bash
-kubectl apply -f app-operator/sensors-rabbit.yml
+kubectl apply -f config/app-operator/sensors-rabbit.yml
 ```
 
 To claim the service, run:
 ```bash
-kubectl apply -f app-operator/sensors-rabbit-claim.yml
+kubectl apply -f config/app-operator/sensors-rabbit-claim.yml
 ```
 
 ### PostgreSQL
@@ -66,12 +66,12 @@ in the same Kubernetes namespace (e.g. provisioned via the [RabbitMQ Cluster Ope
 
 An app operator needs to run the following command:
 ```bash
-kubectl apply -f app-operator/sensors-db.yml
+kubectl apply -f config/app-operator/sensors-db.yml
 ```
 
 To claim the service, run:
 ```bash
-kubectl apply -f app-operator/sensors-db-claim.yml
+kubectl apply -f config/app-operator/sensors-db-claim.yml
 ```
 
 ## Deploying services
