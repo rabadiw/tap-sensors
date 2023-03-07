@@ -30,6 +30,6 @@ spec:
         name: sensors-rabbit-claim
     - name: sensors-db
       ref:
-        apiVersion: sql.tanzu.vmware.com/v1
-        kind: Postgres
+        apiVersion: services.apps.tanzu.vmware.com/v1alpha1
+        kind: ResourceClaim
         name: sensors-db-claim

@@ -25,6 +25,6 @@ spec:
   serviceClaims:
     - name: sensors-rabbit
       ref:
-        apiVersion: rabbitmq.com/v1beta1
-        kind: RabbitmqCluster
+        apiVersion: services.apps.tanzu.vmware.com/v1alpha1
+        kind: ResourceClaim
         name: sensors-rabbit-claim
