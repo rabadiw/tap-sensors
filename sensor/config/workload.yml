@@ -7,7 +7,6 @@ metadata:
     app.kubernetes.io/part-of: tap-sensors
     apps.tanzu.vmware.com/workload-type: web
     apps.tanzu.vmware.com/has-tests: true
-    apps.tanzu.vmware.com/supply-chain: scanning
 spec:
   source:
     git:
@@ -15,6 +14,10 @@ spec:
       ref:
         branch: main
     subPath: sensor
+  build:
+    env:
+      - name: BP_JVM_VERSION
+        value: "17"
   serviceClaims:
     - name: sensors-rabbit
       ref:
