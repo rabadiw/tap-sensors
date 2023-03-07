@@ -6,9 +6,6 @@ metadata:
 spec:
   storageClassName: default
   storageSize: 800M
-  serviceType: LoadBalancer
-  highAvailability:
-    enabled: true
   pgConfig:
     dbname: sensors-db
     username: pgadmin

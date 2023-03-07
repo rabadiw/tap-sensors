@@ -33,43 +33,43 @@ Features:
   - platform operator, to create ClusterInstanceClass and ClusterRole k8s resources
   - app operator, to create RabbitmqCluster, Postgres and ResourceClaim k8s resources
 
-### Platform Operator - Make services available
-To make services available for app operator to create and claim, the platform operator needs to run the following commands:
-```bash
-kubectl apply -f config/platform-operator/rabbit-cluster-instance-class.yml
-kubectl apply -f config/platform-operator/postgres-cluster-instance-class.yml
-```
-
-Also, the following RBACs need to be applied:
-```bash
-kubectl apply -f config/platform-operator/rabbit-claims-rbac.yml
-kubectl apply -f config/platform-operator/postgres-claims-rbac.yml
-```
-
-### RabbitMQ Cluster
-To run this application with VMware Tanzu Application Platform, you need a RabbitMQ cluster running in the same 
+### Service Operator - Make services available
+To run this application with VMware Tanzu Application Platform, you need a RabbitMQ cluster running in the same
 Kubernetes namespace (e.g. provisioned via the [RabbitMQ Cluster Operator for Kubernetes](https://www.rabbitmq.com/kubernetes/operator/operator-overview.html)).
 
-An app operator needs to run the following command: 
+You also need an instance of PostgreSQL database running in the same Kubernetes namespace 
+(e.g. provisioned via the [RabbitMQ Cluster Operator for Kubernetes](https://www.rabbitmq.com/kubernetes/operator/operator-overview.html)).
+
+#### RabbitMQ Cluster
+
+To make services available for an app operator to claim, the service operator needs to run the following commands:
 ```bash
-kubectl apply -f config/app-operator/sensors-rabbit.yml
+kubectl apply -f config/service-operator/rabbit-claims-rbac.yml
+kubectl apply -f config/service-operator/rabbit-cluster-instance-class.yml
+kubectl apply -f config/service-operator/sensors-rabbit.yml
 ```
 
-To claim the service, run:
+#### PostgreSQL
+
+To make services available for an app operator to claim, the service operator needs to run the following commands:
+```bash
+kubectl apply -f config/service-operator/postgres-cluster-instance-class.yml
+kubectl apply -f config/service-operator/postgres-claims-rbac.yml
+kubectl apply -f config/service-operator/sensors-db.yml
+```
+
+### App Operator
+
+#### RabbitMQ Cluster
+
+To claim RabbitMQ service:
 ```bash
 kubectl apply -f config/app-operator/sensors-rabbit-claim.yml
 ```
 
-### PostgreSQL
-To run this application with VMware Tanzu Application Platform, you need an instance of PostgreSQL database running 
-in the same Kubernetes namespace (e.g. provisioned via the [RabbitMQ Cluster Operator for Kubernetes](https://www.rabbitmq.com/kubernetes/operator/operator-overview.html)).
+#### PostgreSQL
 
-An app operator needs to run the following command:
-```bash
-kubectl apply -f config/app-operator/sensors-db.yml
-```
-
-To claim the service, run:
+To claim Postgres database:
 ```bash
 kubectl apply -f config/app-operator/sensors-db-claim.yml
 ```
