@@ -100,21 +100,24 @@ tanzu app workload get tap-sensors-hub
 ### Wavefront
 For both services, to be able to publish metrics to Wavefront, they need to be configured with the Wavefront URI
 and API token. Each service comes with an application.yml configuration file under `src/main/resources`. They have been
-preconfigured for the Wavefront SaaS freemium account, however the API token was omitted in the configuration. Please
-add `api-token` under the `management.wavefront` section, at the same level as `uri`.
+preconfigured for the Wavefront SaaS freemium account, however the API token was omitted in the configuration.
 
 If you want to publish metrics to other instance of Wavefront/Tanzu Observability, you can change application.yml
 configs accordingly.
 
-If you want to use the freemium one, please follow the steps below to generate a fresh API token.
+If you want to use the freemium one, please follow the steps below to generate and set the API token.
 
 #### Generate Wavefront freemium token
-1. If you have ever configured Wavefront freemium token, it leaves behind some file with a token on your file system.
+
+1. Clean old token - optional
+If you have ever configured Wavefront freemium token, it leaves behind some file with a token on your file system.
 Please run the provided script for cleaning that up:
 ```shell
 bin/clean-wavefront-token
 ```
-2. Start one of the services on your local, lets say the sensor one
+
+2. Start the sensor service
+Start one of the services on your local, lets say the sensor one
 From the root folder of the project, run the following commands:
 ```shell
 docker compose up -d
@@ -122,10 +125,17 @@ docker compose up -d
 ```
 See more on running the application locally [below](#running-on-local)
 
+3. Extract API token from logs
 When the service starts successfully it will connect to the Wavefront SaaS and provision you a freemium account and
 crate an API token. The details are logged in the console and include the Wavefront URI, API token and a unique link to
-your dashboard within Wavefront. Please capture those details, and use the value of the API token in both
-`application.yml` configs.
+your dashboard within Wavefront. Please capture those details.
+
+4. Add API token to app configuration
+You can simply set the environment variable:
+```shell
+export MANAGEMENT_WAVEFRONT_API_TOKEN=<your-api-token>
+```
+Alternatively, you can add `api-token` under the `management.wavefront` section, at the same level as `uri`.
 
 ## Running on local
 
