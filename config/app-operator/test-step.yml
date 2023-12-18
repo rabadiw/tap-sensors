@@ -2,7 +2,7 @@ apiVersion: tekton.dev/v1beta1
 kind: Pipeline
 metadata:
   name: developer-defined-tekton-pipeline
-  namespace: my-apps
+  namespace: apps
   labels:
     apps.tanzu.vmware.com/pipeline: test
 spec:
