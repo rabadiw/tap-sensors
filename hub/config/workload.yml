@@ -26,10 +26,10 @@ spec:
     - name: sensors-rabbit
       ref:
         apiVersion: rabbitmq.com/v1beta1
-        kind: RabbitmqCluster
-        name: sensors-rabbit-claim
+        kind: ClassClaim
+        name: sensors-rabbit-hub-claim
     - name: sensors-db
       ref:
         apiVersion: services.apps.tanzu.vmware.com/v1alpha1
         kind: ResourceClaim
-        name: sensors-db-claim
+        name: sensors-db-hub-claim
